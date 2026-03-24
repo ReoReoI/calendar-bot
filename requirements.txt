@@ -1,2 +1,4 @@
 google-api-python-client>=2.100.0
 google-auth>=2.23.0
+# webhook.py（グループID取得用・Render デプロイ時に使用）
+# 標準ライブラリのみ使用のため追加パッケージ不要
