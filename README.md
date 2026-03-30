@@ -3,6 +3,10 @@
 Google カレンダーの予定を毎朝 8:00 JST に LINE グループへ通知する Bot。
 GitHub Actions で自動実行。**ランニングコスト 0 円**。
 
+> 📖 **初めてセットアップする方へ**
+> プログラミング経験がない方でも手順通りに進められる詳細ガイドを用意しています。
+> 👉 **[SETUP_GUIDE.md](./SETUP_GUIDE.md) を参照してください。**
+
 ## 通知イメージ
 
 ```
@@ -141,6 +145,7 @@ calendar-bot/
 ├── Procfile                # Render デプロイ用（webhook.py 起動コマンド）
 ├── .env.example            # 環境変数テンプレート
 ├── requirements.txt        # 依存パッケージ
+├── SETUP_GUIDE.md          # 初心者向け完全セットアップガイド
 └── README.md               # このファイル
 ```
 
