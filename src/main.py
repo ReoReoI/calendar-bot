@@ -78,8 +78,13 @@ def main() -> None:
     logger.info("送信メッセージ:\n%s", message)
 
     notifier = LineNotifier()
-    notifier.send_text(message)
-    logger.info("LINE 通知を送信しました")
+    group_id = os.environ.get("LINE_GROUP_ID")
+    if group_id:
+        notifier.send_to_group(message, group_id)
+        logger.info("LINE グループに通知を送信しました（1通消費）")
+    else:
+        notifier.send_text(message)
+        logger.info("LINE Broadcast で通知を送信しました")
 
 
 if __name__ == "__main__":

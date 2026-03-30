@@ -87,6 +87,10 @@ class LineNotifier:
         """テキストメッセージを友達全員に Broadcast 送信する"""
         self._broadcast_messages([{"type": "text", "text": text}])
 
+    def send_to_group(self, text: str, group_id: str) -> None:
+        """テキストメッセージを LINE グループに Push 送信する（1通消費）"""
+        self._push_messages(group_id, [{"type": "text", "text": text}])
+
     def send_to_user(self, text: str, user_id: str | None = None) -> None:
         """テキストメッセージを特定ユーザーに Push 送信する"""
         target = user_id or self.user_id
