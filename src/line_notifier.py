@@ -95,3 +95,12 @@ class LineNotifier:
                 "LINE_USER_ID 環境変数が設定されていません"
             )
         self._push_messages(target, [{"type": "text", "text": text}])
+
+    def send_to_group(self, text: str, group_id: str | None = None) -> None:
+        """テキストメッセージをグループに Push 送信する"""
+        target = group_id or os.environ.get("LINE_GROUP_ID")
+        if not target:
+            raise EnvironmentError(
+                "LINE_GROUP_ID 環境変数が設定されていません"
+            )
+        self._push_messages(target, [{"type": "text", "text": text}])
